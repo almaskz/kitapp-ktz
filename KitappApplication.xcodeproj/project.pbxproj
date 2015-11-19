@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275CD577A95A2B6AD80141DB /* libPods.a */; };
+		8FEC722A1BFDB17E0020A58C /* KTZ_QRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC72291BFDB17E0020A58C /* KTZ_QRViewController.m */; };
+		8FEC722D1BFDB1BD0020A58C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEC722C1BFDB1BD0020A58C /* AVFoundation.framework */; };
+		8FEC72301BFDCA640020A58C /* KTZ_ManagerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC722F1BFDCA640020A58C /* KTZ_ManagerTableViewController.m */; };
 		91032BC51BA9356D00E3997B /* buttonNormalStateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */; };
 		91032BC61BA9356D00E3997B /* buttonTouchDownStateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */; };
 		912696041B79B7E600825912 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 912696031B79B7E600825912 /* UIDeviceHardware.m */; };
@@ -70,6 +73,11 @@
 		021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		275CD577A95A2B6AD80141DB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		68031C8FD573F01B247A6229 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8FEC72281BFDB17E0020A58C /* KTZ_QRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTZ_QRViewController.h; sourceTree = "<group>"; };
+		8FEC72291BFDB17E0020A58C /* KTZ_QRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTZ_QRViewController.m; sourceTree = "<group>"; };
+		8FEC722C1BFDB1BD0020A58C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8FEC722E1BFDCA640020A58C /* KTZ_ManagerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTZ_ManagerTableViewController.h; sourceTree = "<group>"; };
+		8FEC722F1BFDCA640020A58C /* KTZ_ManagerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTZ_ManagerTableViewController.m; sourceTree = "<group>"; };
 		91032BC31BA9356D00E3997B /* buttonNormalStateImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonNormalStateImage.png; path = Images.xcassets/buttonNormalStateImage.png; sourceTree = "<group>"; };
 		91032BC41BA9356D00E3997B /* buttonTouchDownStateImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonTouchDownStateImage.png; path = Images.xcassets/buttonTouchDownStateImage.png; sourceTree = "<group>"; };
 		912696021B79B7E600825912 /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEC722D1BFDB1BD0020A58C /* AVFoundation.framework in Frameworks */,
 				5C65A8114C3DC7DC39C9D16D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +175,17 @@
 				68031C8FD573F01B247A6229 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8FEC722B1BFDB18E0020A58C /* KTZ */ = {
+			isa = PBXGroup;
+			children = (
+				8FEC72281BFDB17E0020A58C /* KTZ_QRViewController.h */,
+				8FEC72291BFDB17E0020A58C /* KTZ_QRViewController.m */,
+				8FEC722E1BFDCA640020A58C /* KTZ_ManagerTableViewController.h */,
+				8FEC722F1BFDCA640020A58C /* KTZ_ManagerTableViewController.m */,
+			);
+			name = KTZ;
 			sourceTree = "<group>";
 		};
 		912696051B79BA5200825912 /* UIDeviceHardware */ = {
@@ -292,6 +312,7 @@
 				917700EC1B42869D002864D1 /* AppDelegate.h */,
 				917700ED1B42869D002864D1 /* AppDelegate.m */,
 				917700F21B42869D002864D1 /* Main.storyboard */,
+				8FEC722B1BFDB18E0020A58C /* KTZ */,
 				917700F51B42869D002864D1 /* Images.xcassets */,
 				917700F71B42869D002864D1 /* LaunchScreen.xib */,
 				917701771B43C794002864D1 /* UIImage + Scale */,
@@ -423,6 +444,7 @@
 		D335CF9ED792F68457F27EA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FEC722C1BFDB1BD0020A58C /* AVFoundation.framework */,
 				275CD577A95A2B6AD80141DB /* libPods.a */,
 			);
 			name = Frameworks;
@@ -480,7 +502,7 @@
 				TargetAttributes = {
 					917700E41B42869D002864D1 = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = FY4K8ZFLRQ;
+						DevelopmentTeam = XUVCQ3ELF3;
 					};
 					917700FD1B42869D002864D1 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -610,7 +632,9 @@
 				912696041B79B7E600825912 /* UIDeviceHardware.m in Sources */,
 				91296AD31B4CF68E00693E8D /* AddNewBookViewController.m in Sources */,
 				917700F11B42869D002864D1 /* ViewController.m in Sources */,
+				8FEC72301BFDCA640020A58C /* KTZ_ManagerTableViewController.m in Sources */,
 				91296B081B4D41A000693E8D /* MyBooksViewController.m in Sources */,
+				8FEC722A1BFDB17E0020A58C /* KTZ_QRViewController.m in Sources */,
 				91296AD01B4BF05000693E8D /* MyProfileViewController.m in Sources */,
 				91DD90191B4AA0270068B7DB /* MainViewController1.m in Sources */,
 				91C7F6CA1B4511A100D70C0D /* TableViewCell.m in Sources */,
@@ -721,7 +745,7 @@
 				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitappktz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -807,7 +831,7 @@
 				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitappktz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -893,7 +917,7 @@
 				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitappktz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

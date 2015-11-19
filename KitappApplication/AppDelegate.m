@@ -21,15 +21,37 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Development
-//    [Parse setApplicationId:@"iHjG6o4ubNKSQ5Umu3UjS91U0IQbYeNJTzLHS82m"
-//                  clientKey:@"TS6Lm4nyntT3vt3rtCUxtWx64NjYC7r4UizSoR0d"];
+    [Parse setApplicationId:@"iHjG6o4ubNKSQ5Umu3UjS91U0IQbYeNJTzLHS82m"
+                  clientKey:@"TS6Lm4nyntT3vt3rtCUxtWx64NjYC7r4UizSoR0d"];
     
     // Release
-    [Parse setApplicationId:@"wkHUs5DTKp8XfwICQ2hmy381aQGbx8lKSBecpwRL"
-                  clientKey:@"Nz8WByP48lzdnRxo0DHWHlzcSRK9o0NTylKs7Hpk"];
+//    [Parse setApplicationId:@"wkHUs5DTKp8XfwICQ2hmy381aQGbx8lKSBecpwRL"
+//                  clientKey:@"Nz8WByP48lzdnRxo0DHWHlzcSRK9o0NTylKs7Hpk"];
+    
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     
     return YES;
 }
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[ @"global" ];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -47,6 +69,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

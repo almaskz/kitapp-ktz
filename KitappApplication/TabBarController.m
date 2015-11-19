@@ -28,15 +28,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIColor *beigeLightColor = [UIColor colorWithRed:1.0 green:249/255.0 blue:243/255.0 alpha:1.0];
-    UIColor *beigeDarkColor = [UIColor colorWithRed:215/255.0 green:201/255.0 blue:191/255.0 alpha:1.0];
-    UIColor *darkBrownColor = [UIColor colorWithRed:117/255.0 green:91/255.0 blue:78/255.0 alpha:1];
-    UIColor *brownColor = [UIColor colorWithRed:83/255.0 green:48/255.0 blue:29/255.0 alpha:1];
     
     UITabBar *tabBar = self.tabBar;
     UITabBarItem *item0 = [tabBar.items objectAtIndex:0];
-    UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
-    UITabBarItem *item2 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *item2 = [tabBar.items objectAtIndex:1];
     tabBar.tintColor = [UIColor brownColor];
     
     //tabBar.backgroundImage = [UIImage imageNamed:@"tabBarBackgroundImage.png"];
@@ -57,16 +52,16 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
     item0Image = [item0Image scaledToSize:CGSizeMake(27, 27)];
     item0.image = item0Image;
     
-    UIImage *item1Image = [UIImage imageNamed:@"addBookIcon.png"];
-    item1Image = [item1Image scaledToSize:CGSizeMake(27, 27)];
-    item1.image = item1Image;
+//    UIImage *item1Image = [UIImage imageNamed:@"addBookIcon.png"];
+//    item1Image = [item1Image scaledToSize:CGSizeMake(27, 27)];
+//    item1.image = item1Image;
     
     UIImage *item2Image = [UIImage imageNamed:@"myProfileIcon.png"];
     item2Image = [item2Image scaledToSize:CGSizeMake(27, 27)];
     item2.image = item2Image;
 
     item0.title = @"Все книги";
-    item1.title = @"Добавить книгу";
+//    item1.title = @"Добавить книгу";
     item2.title = @"Профиль";
     tabBar.tintColor =  [UIColor brownColor];
 

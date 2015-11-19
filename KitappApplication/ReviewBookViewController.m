@@ -11,7 +11,7 @@
 #import "UIImage+Scale.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface ReviewBookViewController ()
+@interface ReviewBookViewController () <UIAlertViewDelegate>
 @property (nonatomic) UIImageView *imageView;
 @property (nonatomic) UIScrollView *scrollView;
 
@@ -33,17 +33,6 @@
 @end
 
 @implementation ReviewBookViewController
-
-@synthesize titleLabel = _titleLabel;
-@synthesize authorLabel = _authorLabel;
-@synthesize sellerLabel = _sellerLabel;
-@synthesize priceLabel = _priceLabel;
-@synthesize genreLabel = _genreLabel;
-@synthesize descriptionLabel = _descriptionLabel;
-@synthesize bkmrkButton = _bkmrkButton;
-@synthesize telephoneLabel = _telephoneLabel;
-@synthesize backButton = _backButton;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -100,16 +89,17 @@
     _sellerLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:14];
     _sellerLabel.textColor = brownColor;
     _sellerLabel.adjustsFontSizeToFitWidth = YES;
+    
     PFUser *user = _book[@"owner"];
+    
     _sellerLabel.text = [NSString stringWithFormat:@"Продавец: %@", user.username];
     _sellerLabel.textAlignment = NSTextAlignmentCenter;
     [_scrollView addSubview:_sellerLabel];
     _sellerLabel.frame = CGRectMake(30, CGRectGetMaxY(seperator1.frame)+10, self.view.frame.size.width-60, 40);
 
-    
     //call button
     _callButton = [UIButton new];
-    [_callButton setTitle:@"позвонить" forState:UIControlStateNormal];
+    [_callButton setTitle:@"Заказать" forState:UIControlStateNormal];
     [_callButton setTitleColor:[UIColor colorWithRed:255/255.0 green:247/255.0 blue:240/255.0 alpha:1.0] forState:UIControlStateNormal];
     //_callButton.layer.borderColor = [UIColor brownColor].CGColor;
     //_callButton.layer.borderWidth = 1.0;
@@ -119,6 +109,11 @@
     _callButton.frame = CGRectMake(100, CGRectGetMaxY(_sellerLabel.frame)+5, self.view.frame.size.width-200, 32);
     [_scrollView addSubview:_callButton];
     [_callButton addTarget:self action:@selector(callButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (self.isManagerViewing) {
+        [_callButton setTitle:[NSString stringWithFormat:@"Вагон %d, место %d", self.trainNumber, self.seatNumber] forState:UIControlStateNormal];
+    }
+    
     
     //genre label
     _genreLabel = [UILabel new];
@@ -156,40 +151,40 @@
     [_descriptionLabel sizeToFit];
     _scrollView.contentSize = CGSizeMake(CGRectGetWidth(_scrollView.frame), CGRectGetMaxY(_descriptionLabel.frame)+20);
     
-    //back button
-    _backButton = [UIButton new];
-    _backButton.layer.masksToBounds = YES;
-    _backButton.frame = CGRectMake(75, 140, 35, 35);
-    /*_backButton.titleLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
-    [_backButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-    [_backButton setTitle:@"назад" forState:UIControlStateNormal];*/
-    UIImage *backImage = [UIImage new];
-    backImage = [UIImage imageNamed:@"backIcon.png"];
-    backImage = [backImage scaledToSize:CGSizeMake(35, 35)];
-    [_backButton setImage:backImage forState:UIControlStateNormal];
-    [_backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [_scrollView addSubview:_backButton];
-    _backButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [_scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_backButton]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_backButton)]];
-    [_scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[_backButton]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(_backButton)]];
-    
-    //bookmark button
-    _bkmrkButton = [UIButton new];
-    _bkmrkButton.layer.masksToBounds = YES;
-    UIImage *bkmrkImage = [UIImage new];
-    [self getBookmarkState];
-    bkmrkImage = [bkmrkImage scaledToSize:CGSizeMake(30, 30)];
-    [_bkmrkButton setImage:bkmrkImage forState:UIControlStateNormal];
-    [_bkmrkButton addTarget:self action:@selector(bookmarkButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    [_scrollView addSubview:_bkmrkButton];
-    
-    _bkmrkButton.frame = CGRectMake(self.view.frame.size.width-45, 25, 30, 30);
+//    //back button
+//    _backButton = [UIButton new];
+//    _backButton.layer.masksToBounds = YES;
+//    _backButton.frame = CGRectMake(75, 140, 35, 35);
+//    /*_backButton.titleLabel.font = [UIFont fontWithName:@"IowanOldStyle-Roman" size:16];
+//    [_backButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+//    [_backButton setTitle:@"назад" forState:UIControlStateNormal];*/
+//    UIImage *backImage = [UIImage new];
+//    backImage = [UIImage imageNamed:@"backIcon.png"];
+//    backImage = [backImage scaledToSize:CGSizeMake(35, 35)];
+//    [_backButton setImage:backImage forState:UIControlStateNormal];
+//    [_backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+//    [_scrollView addSubview:_backButton];
+//    _backButton.translatesAutoresizingMaskIntoConstraints = NO;
+//    [_scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[_backButton]"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(_backButton)]];
+//    [_scrollView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[_backButton]"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(_backButton)]];
+//    
+//    //bookmark button
+//    _bkmrkButton = [UIButton new];
+//    _bkmrkButton.layer.masksToBounds = YES;
+//    UIImage *bkmrkImage = [UIImage new];
+////    [self getBookmarkState];
+//    bkmrkImage = [bkmrkImage scaledToSize:CGSizeMake(30, 30)];
+//    [_bkmrkButton setImage:bkmrkImage forState:UIControlStateNormal];
+//    [_bkmrkButton addTarget:self action:@selector(bookmarkButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+//    [_scrollView addSubview:_bkmrkButton];
+//    
+//    _bkmrkButton.frame = CGRectMake(self.view.frame.size.width-45, 25, 30, 30);
     
 
    
@@ -311,10 +306,41 @@
         [alertView show];
     }
 }
--(void)callButtonPressed{
-    PFUser *user = _book[@"owner"];
-    NSString *number = user.username;
-    [self call:number];
+-(void)callButtonPressed {
+    
+    if (self.isManagerViewing) {
+        return;
+    }
+    
+    PFObject *object = [PFObject objectWithClassName:@"Order"];
+    object[@"trainNumber"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"trainNumber"];
+    object[@"seatNumber"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"seatNumber"];
+    object[@"book"] = self.book;
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Оформление заказа";
+    hud.hidden = NO;
+    
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        hud.hidden = YES;
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Поздравляем" message:@"Ваш заказ отправлен проводнику" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+        
+        // Send push notification to query
+        [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                       withMessage:[NSString stringWithFormat:@"Новый заказ в %d вагон", [[[NSUserDefaults standardUserDefaults] objectForKey:@"trainNumber"] intValue]]];
+        
+    }];
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

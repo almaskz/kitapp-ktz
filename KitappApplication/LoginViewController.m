@@ -140,7 +140,14 @@
                                     block:^(PFUser *user, NSError *error) {
                                         
                                         if (user) {
-                                            [self performSegueWithIdentifier:@"loginMoveToPopularBooks" sender:self];
+                                            
+                                            BOOL isManager = [user[@"isManager"] boolValue];
+                                            if (!isManager) {
+                                                [self performSegueWithIdentifier:@"loginMoveToPopularBooks" sender:self];
+                                            } else {
+                                                
+                                            }
+                                            
                                             NSLog(@"Logged in");
                                             [hud hide:YES];
                                         } else {

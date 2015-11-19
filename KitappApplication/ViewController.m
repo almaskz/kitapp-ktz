@@ -18,7 +18,6 @@
 @property (nonatomic) UIButton *loginButton;
 @property (nonatomic) UIButton *nextButton;
 
-
 @end
 
 @implementation ViewController

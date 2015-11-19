@@ -19,11 +19,6 @@
 @end
 
 @implementation MainViewController1
-/*@synthesize signupButton = _signupButton;
-@synthesize loginButton = _loginButton;
-@synthesize bg1 = _bg1;
-@synthesize logoImage = _logoImage;
-@synthesize bg1Label = _bg1Label;*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];

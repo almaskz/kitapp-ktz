@@ -13,4 +13,9 @@
 
 @property (nonatomic) Book *book;
 -(void)call:(NSString *) phoneNumber;
+@property (nonatomic) BOOL isManagerViewing;
+
+@property (nonatomic) int trainNumber;
+@property (nonatomic) int seatNumber;
+
 @end

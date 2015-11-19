@@ -63,7 +63,7 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_tableView)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-60-[_tableView]-0-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_tableView]-0-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(_tableView)]];
@@ -161,35 +161,29 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    _lastSelectedItem = indexPath;
-    [self performSegueWithIdentifier:@"toReviewBookVC" sender:self];
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 230.f;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ReviewBookViewController *nextVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ReviewBookViewController"];
-    nextVC.book = self.booksArray[indexPath.row];
     
-    [self presentViewController:nextVC animated:YES completion:nil];
+    
+    [self performSegueWithIdentifier:@"toReviewBooksSegue" sender:indexPath];
 }
 
-
-#pragma mark - Segue methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     if ([segue.destinationViewController isKindOfClass:[ReviewBookViewController class]]) {
-        ReviewBookViewController *nextVC = segue.destinationViewController;
-        nextVC.book = self.booksArray[self.lastSelectedItem.row];
+        if ([sender isKindOfClass:[NSIndexPath class]]) {
+            ReviewBookViewController *nextVC = segue.destinationViewController;
+            NSIndexPath *indexPath = sender;
+            nextVC.book = self.booksArray[indexPath.row];
+            nextVC.isManagerViewing = NO;
+        }
     }
-    
 }
+
 
 @end
 
