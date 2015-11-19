@@ -1,0 +1,43 @@
+PODS:
+  - AASpringRefresh (1.0)
+  - AFViewShaker (0.0.2)
+  - AKPickerView (0.2.6)
+  - Bolts/Tasks (1.2.2)
+  - CBStoreHouseRefreshControl (1.0)
+  - CSStickyHeaderFlowLayout (0.2.10)
+  - MBProgressHUD (0.9.1)
+  - MTGratuityPicker (0.0.2)
+  - Parse (1.8.3):
+    - Bolts/Tasks (>= 1.2.2)
+  - QRCodeReaderViewController (4.0.1)
+  - SVProgressHUD (HEAD based on 2.0-beta)
+  - TOCropViewController (1.0.6)
+
+DEPENDENCIES:
+  - AASpringRefresh
+  - AFViewShaker (~> 0.0.2)
+  - AKPickerView
+  - CBStoreHouseRefreshControl
+  - CSStickyHeaderFlowLayout
+  - MBProgressHUD (~> 0.9.1)
+  - MTGratuityPicker (~> 0.0.2)
+  - Parse
+  - QRCodeReaderViewController (~> 4.0.1)
+  - SVProgressHUD (HEAD)
+  - TOCropViewController
+
+SPEC CHECKSUMS:
+  AASpringRefresh: 65b1f85054620c1590d02da9907386e8ea8b62f6
+  AFViewShaker: 7e4bc215ca3e92347b78da436fca74e1730b52e8
+  AKPickerView: e31dcb9572c04d8439512315798862d9eb84b18f
+  Bolts: 20a2bd788273360cb1e31530dc19b8544eef2544
+  CBStoreHouseRefreshControl: a814bd725e74ff4c1e8dd96eb02358199b0da04f
+  CSStickyHeaderFlowLayout: 5366582779d8b7c9ba9b9cc729c218cc23888776
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  MTGratuityPicker: 1ed2853c80ea79f5ce855dfa73602eb7be764930
+  Parse: 4b251ac63b76d12b334a32579cc3b174446f0c39
+  QRCodeReaderViewController: 6538745c8f4ffa9407a26bd7f9489ea01739e7b0
+  SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
+  TOCropViewController: a8589f4a62e633fc0fbf13a113b3dff042932d67
+
+COCOAPODS: 0.39.0
