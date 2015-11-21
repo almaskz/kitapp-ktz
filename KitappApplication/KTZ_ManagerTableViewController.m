@@ -23,6 +23,12 @@
     
     [self getOrdersFromParse];
     
+    [PFPush subscribeToChannelInBackground:@"manager" block:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"manager subscribed to channel: manager");
+        }
+    }];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

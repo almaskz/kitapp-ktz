@@ -704,8 +704,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				CODE_SIGN_IDENTITY = "Apple Production IOS Push Services: com.kagroup.KitappPush";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Production IOS Push Services: com.kagroup.KitappPush";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -726,8 +726,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "ca807372-8dfc-4b54-b4fa-07ea316bfce8";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -737,7 +737,7 @@
 			baseConfigurationReference = 021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Production IOS Push Services: com.kagroup.KitappPush";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -745,9 +745,10 @@
 				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitappktz;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kagroup.KitappPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8fd731c2-9203-421b-81c0-48c86dcc3b9f";
 			};
 			name = Debug;
 		};
@@ -790,8 +791,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				CODE_SIGN_IDENTITY = "Apple Production IOS Push Services: com.kagroup.KitappPush";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Production IOS Push Services: com.kagroup.KitappPush";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -812,8 +813,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "ca807372-8dfc-4b54-b4fa-07ea316bfce8";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -823,7 +824,7 @@
 			baseConfigurationReference = 68031C8FD573F01B247A6229 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Production IOS Push Services: com.kagroup.KitappPush";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -831,9 +832,10 @@
 				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitappktz;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kagroup.KitappPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8fd731c2-9203-421b-81c0-48c86dcc3b9f";
 			};
 			name = Release;
 		};
@@ -876,8 +878,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Olga Khvan (FY4K8ZFLRQ)";
+				CODE_SIGN_IDENTITY = "Apple Production IOS Push Services: com.kagroup.KitappPush";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Production IOS Push Services: com.kagroup.KitappPush";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -898,8 +900,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1194eb26-0c6e-4b9b-80da-2569b530dce4";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "ca807372-8dfc-4b54-b4fa-07ea316bfce8";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -909,7 +911,7 @@
 			baseConfigurationReference = 021D2E78299435F5B4DAB645 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Production IOS Push Services: com.kagroup.KitappPush";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -917,9 +919,10 @@
 				);
 				INFOPLIST_FILE = KitappApplication/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kz.intellection.kitappktz;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kagroup.KitappPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8fd731c2-9203-421b-81c0-48c86dcc3b9f";
 			};
 			name = Distribution;
 		};

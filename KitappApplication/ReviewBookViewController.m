@@ -327,13 +327,11 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Поздравляем" message:@"Ваш заказ отправлен проводнику" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         
-        PFQuery *pushQuery = [PFInstallation query];
-        [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
         
-        // Send push notification to query
-        [PFPush sendPushMessageToQueryInBackground:pushQuery
-                                       withMessage:[NSString stringWithFormat:@"Новый заказ в %d вагон", [[[NSUserDefaults standardUserDefaults] objectForKey:@"trainNumber"] intValue]]];
-        
+        PFPush *push = [[PFPush alloc] init];
+        [push setChannel:@"manager"]; //manager
+        [push setMessage:[NSString stringWithFormat:@"Новый заказ в %d вагон", [[[NSUserDefaults standardUserDefaults] objectForKey:@"trainNumber"] intValue]]];
+        [push sendPushInBackground];
     }];
     
 }

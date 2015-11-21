@@ -22,7 +22,6 @@
 -(BOOL)startReading;
 -(void)stopReading;
 
-@property (nonatomic) BOOL isManager;
 @end
 
 @implementation KTZ_QRViewController
@@ -35,13 +34,6 @@
     
     // Set the initial value of the flag to NO.
     _isReading = NO;
-    
-    self.isManager = NO;
-    
-    if (self.isManager) {
-        [self performSegueWithIdentifier:@"toManagerVC" sender:nil];
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,7 +50,7 @@
         if ([self startReading]) {
             // If the startReading methods returns YES and the capture session is successfully
             // running, then change the start button title and the status message.
-            [_bbitemStart setTitle:@"Stop" forState:UIControlStateNormal];
+            //[_bbitemStart setTitle:@"Stop" forState:UIControlStateNormal];
             [_lblStatus setText:@"Scanning for QR Code..."];
         }
     }
@@ -66,7 +58,7 @@
         // In this case the app is currently reading a QR code and it should stop doing so.
         [self stopReading];
         // The bar button item's title should change again.
-        [_bbitemStart setTitle:@"Start!" forState:UIControlStateNormal];
+        //[_bbitemStart setTitle:@"Start!" forState:UIControlStateNormal];
     }
     
     // Set to the flag the exact opposite value of the one that currently has.
